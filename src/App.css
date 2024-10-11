@@ -1,38 +1,130 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+body {
+  font-family: 'Roboto', sans-serif; /* Using Google Font */
+  background: url('https://play-lh.googleusercontent.com/4LVcW1MTvnxkw3Qjj-x8xMi61eZjRfUnZBr_CGjK32U1heM7vdsow3dSDW_l-oYQFg') no-repeat center center fixed; /* Add your background image here */
+  background-size: cover; /* Ensures the image covers the whole page */
+  margin: 0;
+  padding: 0;
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  height: 50vh; /* Full viewport height */
+}
+
+.container {
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Softer shadow */
+  width: 400px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.container:hover {
+  transform: translateY(-10px); /* Slight hover effect */
+}
+
+h2 {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+input {
+  padding: 12px;
+  width: 80%;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 30px; /* Rounded input fields */
+  font-size: 16px;
+  transition: box-shadow 0.3s ease;
+}
+
+input:focus {
+  box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); /* Blue focus effect */
+}
+
+button {
+  padding: 12px 25px;
+  background-color: #007bff;
   color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out;
 }
 
-.App-link {
-  color: #61dafb;
+button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px); /* Button lift on hover */
 }
 
-@keyframes App-logo-spin {
+.weather-info {
+  margin-top: 30px;
+  color: #333;
+  animation: fadeIn 1s ease-out; /* Subtle fade-in effect */
+}
+
+.weather-info h3 {
+  margin-bottom: 10px;
+  font-size: 22px;
+  color: #007bff;
+}
+
+.weather-info p {
+  margin: 5px 0;
+  font-size: 18px;
+}
+
+.app-link {
+  margin-top: 20px;
+}
+
+.app-link img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+
+.app-link a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+}
+
+.app-link a:hover {
+  color: #0056b3;
+}
+
+.app-link p {
+  margin-top: 10px;
+  font-size: 14px;
+  color: #333;
+}
+
+/* Fade-in animation for the weather info */
+@keyframes fadeIn {
   from {
-    transform: rotate(0deg);
+    opacity: 0;
+    transform: translateY(10px);
   }
   to {
-    transform: rotate(360deg);
+    opacity: 1;
+    transform: translateY(0);
   }
+}
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('https://i.ytimg.com/vi/MIYQR-Ybrn4/maxresdefault.jpg') no-repeat center center fixed;
+  background-size: cover;
+  filter: blur(2px); /* Adjust blur intensity */
+  z-index: -1; /* Position behind the container */
 }
